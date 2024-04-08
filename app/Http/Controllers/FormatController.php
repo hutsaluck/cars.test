@@ -28,6 +28,22 @@ class FormatController extends Controller
                 'productionYear' => '2001',
                 'color' => 'Green',
             ],
+            (object)[
+                'brandName' => 'Toyota',
+                'model' => 'Camry',
+                'modelDetails' => 'LE',
+                'modelYear' => '2018',
+                'productionYear' => '2017',
+                'color' => 'Black',
+            ],
+            (object)[
+                'brandName' => 'Honda',
+                'model' => 'Civic',
+                'modelDetails' => 'EX',
+                'modelYear' => '2019',
+                'productionYear' => '2018',
+                'color' => 'Silver',
+            ],
         ];
 
         $firstStrategyContext = new Context(new FirstFormattingStrategy());
