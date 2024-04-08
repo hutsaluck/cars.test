@@ -15,8 +15,4 @@ use App\Http\Controllers\FormatController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/format', [FormatController::class, 'format']);
+Route::get('/', [FormatController::class, 'format']);
