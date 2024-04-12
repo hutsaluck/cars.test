@@ -10,5 +10,21 @@ abstract class AbstractFormattingStrategy implements FormattingStrategy
         $this->name = strtolower(class_basename(static::class)) . '_' . date('Y-m-d') . '.txt';
     }
 
-    abstract public function format(array $objects): array;
+    public function formatObjects(array $objects): array
+    {
+        $formattedObjects = [];
+
+        foreach ($objects as $object) {
+            $formattedObjects[] = $this->formatObject($object);
+        }
+
+        return $formattedObjects;
+    }
+
+    abstract public function formatObject(object $object): array;
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
 }

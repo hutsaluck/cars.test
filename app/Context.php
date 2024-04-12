@@ -12,8 +12,8 @@ class Context
         $this->strategy = $strategy;
     }
 
-    public function executeStrategy(array $objects)
+    public function executeStrategy(array $objects): array
     {
-        return $this->strategy->format($objects);
+        return $this->strategy->formatObjects($objects);
     }
 }

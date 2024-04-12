@@ -4,20 +4,14 @@ namespace App\Strategies;
 
 class FirstFormattingStrategy extends AbstractFormattingStrategy
 {
-    public function format(array $objects): array
+    public function formatObject(object $object): array
     {
-        $formattedText = '';
+        $formattedObject = [];
 
-        foreach ($objects as $object) {
-            foreach ($object as $key => $value) {
-                $formattedText .= "$key - $value\n";
-            }
-            $formattedText .= "_______\n";
+        foreach ($object as $key => $value) {
+            $formattedObject[] = "$key - $value";
         }
 
-        return [
-            'name' => $this->name,
-            'text' => $formattedText,
-        ];
+        return $formattedObject;
     }
 }
